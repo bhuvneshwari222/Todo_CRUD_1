@@ -28,8 +28,8 @@
                     field</strong>
             </div>
 
-            <button *ngIf="!isInEditMode" mat-raised-button color="primary" class="w-100">Add Todo</button>
-            <button *ngIf="isInEditMode" mat-raised-button color="primary" class="w-100">Update Todo</button>
+            <button type="submit" *ngIf="!isInEditMode" mat-raised-button color="primary" class="w-100">Add Todo</button>
+            <button (click)="onUpdate()" type="button" *ngIf="isInEditMode" mat-raised-button color="primary" class="w-100">Update Todo</button>
         </form>
     </mat-card-content>
 </mat-card>

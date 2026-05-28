@@ -5,11 +5,15 @@
             <li class="list-group-item d-flex justify-content-between align-item-center" *ngFor="let todo of getTodosArr; trackBy: trackByTodoID">
                 <strong><mat-checkbox [checked]="todo.isCompleted">{{todo.todoItem}}</mat-checkbox></strong>
                 <div>
-                    <button class="mr-2" mat-mini-fab color="primary">
+                    <button 
+                    (click)="onEditTodo(todo)"
+                    class="mr-2" mat-mini-fab color="primary">
                         <mat-icon>edit</mat-icon>
                     </button>
 
-                    <button mat-mini-fab color="warn">
+                    <button
+                    (click)="onRemoveTodo(todo.todoID)"
+                     mat-mini-fab color="warn">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>
