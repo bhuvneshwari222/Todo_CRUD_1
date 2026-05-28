@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="getTodosArr.length > 0; else noTodos">
     <mat-card-title>Todo List</mat-card-title>
     <mat-card-content>
         <ul class="list-group">
@@ -21,3 +21,6 @@
         </ul>
     </mat-card-content>
 </mat-card>
+<ng-template #noTodos>
+    <p class="alert alert-info">No TodoItem Added Yet!!!</p>
+</ng-template>
